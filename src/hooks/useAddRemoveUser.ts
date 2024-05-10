@@ -12,9 +12,9 @@ export const useAddRemoveUser = (user: IUser) => {
 
   const handleAddUser = () => {
     if (userExists) {
-      toast("Opps", "User is already in your list", "warning");
+      toast(1, "Opps", "User is already in your list", "warning");
     } else {
-      toast("Added", "User added successfully", "success");
+      toast(2, "Added", "User added successfully", "success");
     }
 
     dispatch(addUser(user));
@@ -22,7 +22,7 @@ export const useAddRemoveUser = (user: IUser) => {
 
   const handleRemoveUser = () => {
     dispatch(removeUser(user));
-    toast("Removed", "User removed successfully", "info");
+    toast(3, "Removed", "User removed successfully", "info");
   };
 
   return { handleAddUser, handleRemoveUser, userExists };

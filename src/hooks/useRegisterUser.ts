@@ -15,9 +15,9 @@ export const useRegisterUser = () => {
 
   const handleRegisterUser = ({ email, name, username }: UserInputs) => {
     if (!email || !name || !username) {
-      toast("Error", "Please fill all the fields", "error");
+      toast(1, "Error", "Please fill all the fields", "error");
     } else if (users.find((u) => u.username === username)) {
-      toast("Opps", "Username is already taken", "warning");
+      toast(2, "Opps", "Username is already taken", "warning");
     } else {
       const user = {
         email,
@@ -26,7 +26,7 @@ export const useRegisterUser = () => {
       };
 
       dispatch(addUser(user));
-      toast("Added", "User added successfully", "success");
+      toast(3, "Added", "User added successfully", "success");
     }
   };
 

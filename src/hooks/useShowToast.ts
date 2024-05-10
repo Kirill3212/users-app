@@ -6,17 +6,20 @@ export const useShowToast = () => {
 
   const showToast = useCallback(
     (
+      id: number,
       title: string,
       description: string,
       status: "error" | "success" | "warning" | "info"
     ) => {
-      toast({
-        title: title,
-        description: description,
-        status: status,
-        duration: 1200,
-        isClosable: true,
-      });
+      !toast.isActive(id) &&
+        toast({
+          id,
+          title: title,
+          description: description,
+          status: status,
+          duration: 2300,
+          isClosable: true,
+        });
     },
     [toast]
   );
