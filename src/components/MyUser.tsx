@@ -42,7 +42,7 @@ export const MyUser = ({ user }: MyUserProps) => {
       </Box>
 
       <Image
-        src={`https://avatar.iran.liara.run/username?username=${[user.name]}`}
+        src={`https://avatar.iran.liara.run/public/?username=${user.name}`}
         alt={"user photo"}
         boxSize="85px"
       />

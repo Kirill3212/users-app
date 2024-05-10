@@ -49,9 +49,7 @@ export const User = ({ user }: UserProps) => {
           {/* User Image Block */}
           <Flex align="center" minWidth={"250px"}>
             <Image
-              src={`https://avatar.iran.liara.run/username?username=${[
-                user.name,
-              ]}`}
+              src={`https://avatar.iran.liara.run/public/?username=${user.name}`}
               alt={"user photo"}
               boxSize="85px"
             />
