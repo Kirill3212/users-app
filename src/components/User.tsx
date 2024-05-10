@@ -1,7 +1,6 @@
 import { Box, Flex, Image, Text, Link, Button } from "@chakra-ui/react";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IoCloseCircleSharp } from "react-icons/io5";
-import userImg from "../assets/user.png";
 
 import { IUser } from "../types";
 
@@ -49,7 +48,13 @@ export const User = ({ user }: UserProps) => {
         >
           {/* User Image Block */}
           <Flex align="center" minWidth={"250px"}>
-            <Image src={userImg} alt={"user photo"} boxSize="85px" />
+            <Image
+              src={`https://avatar.iran.liara.run/username?username=${[
+                user.name,
+              ]}`}
+              alt={"user photo"}
+              boxSize="85px"
+            />
             <Box ml={"20px"}>
               <Text fontWeight="bold" fontSize="xl">
                 {user.name}

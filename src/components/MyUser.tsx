@@ -1,6 +1,5 @@
 import { VStack, Text, Image, Flex, Box } from "@chakra-ui/react";
 import { IoCloseCircleSharp } from "react-icons/io5";
-import userImg from "../assets/user.png";
 
 import { IUser } from "../types";
 
@@ -42,7 +41,11 @@ export const MyUser = ({ user }: MyUserProps) => {
         <IoCloseCircleSharp size={"18"} />
       </Box>
 
-      <Image src={userImg} alt={"user photo"} boxSize="85px" />
+      <Image
+        src={`https://avatar.iran.liara.run/username?username=${[user.name]}`}
+        alt={"user photo"}
+        boxSize="85px"
+      />
       <VStack alignItems={"left"}>
         <Box display={"flex"} gap={"5px"}>
           <Text color={"yellow.500"}>Name: </Text>
