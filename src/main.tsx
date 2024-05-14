@@ -1,6 +1,9 @@
 import "./index.css";
 import { ChakraProvider } from "@chakra-ui/react";
 
+// import { Profiler } from "react";
+// import { renderPerformance } from "./utils/renderPerformance";
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -17,7 +20,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ChakraProvider>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
+          {/* <Profiler id="App" onRender={renderPerformance}> */}
           <App />
+          {/* </Profiler> */}
         </PersistGate>
       </Provider>
     </ChakraProvider>

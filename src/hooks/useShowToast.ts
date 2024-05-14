@@ -17,7 +17,7 @@ export const useShowToast = () => {
           title: title,
           description: description,
           status: status,
-          duration: 2300,
+          duration: 2000,
           isClosable: true,
         });
     },
