@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
 import { PATH_PAGE } from "./constants";
 
@@ -10,7 +10,7 @@ import AddUser from "./pages/AddUser";
 import Users from "./pages/Users";
 import MyUsers from "./pages/MyUsers";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,

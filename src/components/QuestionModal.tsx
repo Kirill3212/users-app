@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 
-import { Flex, Text, VStack, Image } from "@chakra-ui/react";
+import { Flex, Text, VStack, Image, Box } from "@chakra-ui/react";
 
 import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { IoMdCloseCircle } from "react-icons/io";
 
-import guyWithLaptopImg from "../assets/questrionModal/guyWithLapltop.gif";
-import correctAnswerImg from "../assets/questrionModal/thatIsCorrect.png";
-import wrongAnswerImg from "../assets/questrionModal/thatIsWrong.png";
+import guyWithLaptopImg from "../assets/questionModal/guyWithLaptop.gif";
+import correctAnswerImg from "../assets/questionModal/thatIsCorrect.png";
+import wrongAnswerImg from "../assets/questionModal/thatIsWrong.png";
 
-import correctSound from "../assets/questrionModal/correctSound.mp3";
-import wrongSound from "../assets/questrionModal/wrongSound.mp3";
+import correctSound from "../assets/questionModal/correctSound.mp3";
+import wrongSound from "../assets/questionModal/wrongSound.mp3";
 
 export const QuestionModal = () => {
   const [showModal, setShowModal] = useState(false);
@@ -45,73 +45,82 @@ export const QuestionModal = () => {
       <BsFillPatchQuestionFill size={"20"} onClick={() => setShowModal(true)} />
       {showModal &&
         createPortal(
-          <VStack
-            width={"300px"}
-            backgroundColor={"grey"}
-            borderRadius={"xl"}
-            position={"absolute"}
-            left={"50%"}
-            top={"320px"}
-            transform={"translate(-50%, -50%)"}
-          >
-            <Text color={"white"} mt={"10px"}>
-              Are you a cool programmer ? :)
-            </Text>
-            <Image src={guyWithLaptopImg} width={"100%"} />
-
-            {isCorrect && (
-              <>
-                <audio src={correctSound} autoPlay={true} />
-                <Image
-                  src={correctAnswerImg}
-                  position={"absolute"}
-                  bottom={"45px"}
-                  height={"30px"}
-                />
-              </>
-            )}
-
-            {isWrong && (
-              <>
-                <audio src={wrongSound} autoPlay={true} />
-                <Image
-                  src={wrongAnswerImg}
-                  position={"absolute"}
-                  bottom={"45px"}
-                  height={"30px"}
-                />
-              </>
-            )}
-
-            {/* Answer panel */}
-            <Flex
-              width={"80%"}
-              justifyContent={"space-around"}
-              mb={"10px"}
-              borderRadius={"20px"}
-              backgroundColor={"white"}
+          <>
+            <Box
+              width="100%"
+              height="100%"
+              backgroundColor={"black"}
+              position={"absolute"}
+              opacity={"0.5"}
+            />
+            <VStack
+              width={"355px"}
+              backgroundColor={"black"}
+              borderRadius={"xl"}
+              position={"absolute"}
+              left={"50%"}
+              top={"320px"}
+              transform={"translate(-50%, -50%)"}
             >
-              <Flex
-                alignItems={"center"}
-                gap={"5px"}
-                cursor={"pointer"}
-                onClick={handleCorrect}
-              >
-                <IoIosCheckmarkCircle color="green" size={"20px"} />
-                <Text color={"grey"}>Yes</Text>
-              </Flex>
+              <Text color={"white"} mt={"10px"}>
+                Will you hire me ?
+              </Text>
+              <Image src={guyWithLaptopImg} width={"100%"} />
 
+              {isCorrect && (
+                <>
+                  <audio src={correctSound} autoPlay={true} />
+                  <Image
+                    src={correctAnswerImg}
+                    position={"absolute"}
+                    bottom={"45px"}
+                    height={"30px"}
+                  />
+                </>
+              )}
+
+              {isWrong && (
+                <>
+                  <audio src={wrongSound} autoPlay={true} />
+                  <Image
+                    src={wrongAnswerImg}
+                    position={"absolute"}
+                    bottom={"45px"}
+                    height={"30px"}
+                  />
+                </>
+              )}
+
+              {/* Answer panel */}
               <Flex
-                alignItems={"center"}
-                gap={"5px"}
-                cursor={"pointer"}
-                onClick={handleWrong}
+                width={"70%"}
+                justifyContent={"space-around"}
+                mb={"10px"}
+                borderRadius={"20px"}
+                backgroundColor={"white"}
               >
-                <IoMdCloseCircle color="red" size={"20px"} />
-                <Text color={"grey"}>No</Text>
+                <Flex
+                  alignItems={"center"}
+                  gap={"5px"}
+                  cursor={"pointer"}
+                  onClick={handleCorrect}
+                >
+                  <IoIosCheckmarkCircle color="green" size={"20px"} />
+                  <Text color={"grey"}>Yes</Text>
+                </Flex>
+
+                <Flex
+                  alignItems={"center"}
+                  gap={"5px"}
+                  cursor={"pointer"}
+                  onClick={handleWrong}
+                >
+                  <IoMdCloseCircle color="red" size={"20px"} />
+                  <Text color={"grey"}>No</Text>
+                </Flex>
               </Flex>
-            </Flex>
-          </VStack>,
+            </VStack>
+          </>,
           targetNode as HTMLDivElement
         )}
     </Flex>
