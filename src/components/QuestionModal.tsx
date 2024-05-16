@@ -63,7 +63,7 @@ export const QuestionModal = () => {
               transform={"translate(-50%, -50%)"}
             >
               <Text color={"white"} mt={"10px"}>
-                Will you hire me ?
+                Will you hire me ? &#128516;
               </Text>
               <Image src={guyWithLaptopImg} width={"100%"} />
 
