@@ -33,3 +33,12 @@ export interface IUser {
   username: string;
   website?: string;
 }
+
+// Comment
+export interface IComment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}

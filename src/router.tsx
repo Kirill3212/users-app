@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import AddUser from "./pages/AddUser";
 import Users from "./pages/Users";
 import MyUsers from "./pages/MyUsers";
+import Comments from "./pages/Comments";
 
 export const router = createHashRouter([
   {
@@ -31,6 +32,7 @@ export const router = createHashRouter([
             path: PATH_PAGE.myusers,
             element: <MyUsers />,
           },
+          { path: PATH_PAGE.comments, element: <Comments /> },
         ],
       },
     ],

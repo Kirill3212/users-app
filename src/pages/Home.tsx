@@ -5,6 +5,7 @@ import { Flex, Button, Image, VStack } from "@chakra-ui/react";
 import { MdSupervisedUserCircle } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
 import { LuUserPlus } from "react-icons/lu";
+import { FaComments } from "react-icons/fa";
 
 import spiderImg from "../assets/spider.gif";
 import explosionImg from "../assets/explosion.gif";
@@ -40,7 +41,12 @@ const Home = () => {
         </VStack>
 
         {/* Buttons Nav */}
-        <Flex justifyContent={"center"} gap={"10px"} mb={"50px"}>
+        <Flex
+          justifyContent={"center"}
+          gap={"10px"}
+          mb={"50px"}
+          direction={["column", "row"]}
+        >
           <Link to={"addUser"}>
             <Button
               rightIcon={<LuUserPlus />}
@@ -71,6 +77,17 @@ const Home = () => {
               minW={"180px"}
             >
               My List of Users
+            </Button>
+          </Link>
+
+          <Link to={"comments"}>
+            <Button
+              colorScheme={"teal"}
+              rightIcon={<FaComments />}
+              variant="solid"
+              minW={"180px"}
+            >
+              Comments
             </Button>
           </Link>
         </Flex>
