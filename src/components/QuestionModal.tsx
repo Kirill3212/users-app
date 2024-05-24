@@ -55,7 +55,7 @@ export const QuestionModal = () => {
             />
             <VStack
               width={"355px"}
-              backgroundColor={"black"}
+              backgroundColor={"#2b2b2b"}
               borderRadius={"xl"}
               position={"absolute"}
               left={"50%"}

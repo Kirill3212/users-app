@@ -14,7 +14,7 @@ export const Comment = ({ comment }: CommentProps) => {
       borderRadius="lg"
       boxShadow="lg"
       _hover={{
-        transform: "translateY(-5px)",
+        transform: "translateY(-3px)",
         boxShadow: "xl",
       }}
       transition="all 0.3s ease"
@@ -33,10 +33,14 @@ export const Comment = ({ comment }: CommentProps) => {
         <Flex
           gap={"5px"}
           alignItems={"center"}
-          p={"5px 10px"}
-          borderRadius={"20px"}
+          p={"2px 10px"}
+          borderRadius={"15px"}
           backgroundColor={"#ededed"}
           cursor={"pointer"}
+          transition={"0.4s"}
+          _hover={{
+            backgroundColor: "#c9c9c9",
+          }}
         >
           <IoHeart size={"20px"} color="red" />
           {Math.floor(Math.random() * 100 + 1)}
