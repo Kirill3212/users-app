@@ -1,4 +1,5 @@
-export const URL = "https://jsonplaceholder.typicode.com/users";
+export const URL_USERS = "https://jsonplaceholder.typicode.com/users";
+export const URL_COMMENTS = "https://jsonplaceholder.typicode.com/comments";
 
 export const PATH_PAGE = {
   root: "/",
@@ -6,4 +7,5 @@ export const PATH_PAGE = {
   users: "/users",
   adduser: "/addUser",
   myusers: "/myUsers",
+  comments: "/comments",
 };

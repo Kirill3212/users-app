@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { IUser } from "../types";
+import { IUser, IComment } from "../types";
 
-export const useFetchUsers = (url: string) => {
-  const [users, setUsers] = useState<IUser[]>([]);
+type Response = IUser | IComment;
+
+export const useFetchData = (url: string) => {
+  const [data, setData] = useState<Response[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
@@ -22,7 +24,7 @@ export const useFetchUsers = (url: string) => {
 
           const data = await response.json();
           setIsLoading(false);
-          setUsers(data);
+          setData(data);
         } catch (error) {
           setIsLoading(false);
           setError(true);
@@ -35,5 +37,5 @@ export const useFetchUsers = (url: string) => {
     return () => clearInterval(timerId);
   }, [url]);
 
-  return { users, isLoading, error };
+  return { data, isLoading, error };
 };
