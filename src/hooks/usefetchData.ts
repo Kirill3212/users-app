@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { IUser, IComment } from "../types";
+import { IUser, IComment, IPost } from "../types";
 
-type Response = IUser | IComment;
+type Response = IUser | IComment | IPost;
 
 export const useFetchData = (url: string) => {
   const [data, setData] = useState<Response[]>([]);

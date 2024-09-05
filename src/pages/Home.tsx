@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Flex, Button, Image, VStack } from "@chakra-ui/react";
 
+import { BsFillPostcardHeartFill } from "react-icons/bs";
 import { MdSupervisedUserCircle } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
 import { LuUserPlus } from "react-icons/lu";
@@ -35,6 +36,7 @@ const Home = () => {
           top={"-37px"}
           right={"-35px"}
           cursor={"pointer"}
+          zIndex={5}
         >
           {web && <Image src={spiderImg} onClick={handleDeleteWeb} />}
           {explosion && <Image src={explosionImg} width={"100px"} />}
@@ -88,6 +90,17 @@ const Home = () => {
               minW={"180px"}
             >
               Comments
+            </Button>
+          </Link>
+
+          <Link to={"posts"}>
+            <Button
+              colorScheme={"purple"}
+              rightIcon={<BsFillPostcardHeartFill />}
+              variant="solid"
+              minW={"180px"}
+            >
+              Posts
             </Button>
           </Link>
         </Flex>
